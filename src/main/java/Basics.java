@@ -146,8 +146,8 @@ public class Basics {
         // Fill in the rest of the body here
         String[] arrSplit = to_split.split(" ");
 
-        for (int i = 0; i < arrSplit.length; i++) {
-            ret.append(arrSplit[i].charAt(0));
+        for (String letter : arrSplit) {
+            ret.append(letter.charAt(0));
         }
 
         return ret.toString();
@@ -177,10 +177,14 @@ public class Basics {
          *                (e.g. arr[i] gives you the item at index i).
          */
 
-        for (int i = 1; i < arr.length; i += 2) {
-            current_sum += arr[i];
+        if (arr.length == 0 || arr.length == 1) {
+            return 0;
         }
-
+        else {
+            for (int i = 1; i < arr.length; i += 2) {
+                current_sum += arr[i];
+            }
+        }
         return current_sum;
     }
 
